@@ -14,10 +14,10 @@ from updated_resnet_1 import ResNet50
 
 def build_regression_model():
     base_model_carpal = ResNet50(input_shape = (224, 224, 3))
-    base_model_carpal.load_weights(r'F:\python\web_streamlit\ALL_IN_ONE\model_weights\model_weights\resnet\carpal_weights_30_epoch_wd_2.h5')
+    base_model_carpal.load_weights("https://drive.google.com/file/d/1pnPeSYukdn_a-GtQwjcyQxKVujOYSAUy/view?usp=sharing")
     
     base_model_metacarpal = ResNet50(input_shape = (224, 224, 3))
-    base_model_metacarpal.load_weights(r'F:\python\web_streamlit\ALL_IN_ONE\model_weights\model_weights\resnet\metacarpal_weights_30_epoch_wd_2.h5')
+    base_model_metacarpal.load_weights("https://drive.google.com/file/d/19N2bxesImdU3sfCFWAgUiSfq55RRZBPR/view?usp=sharing")
     
     gender_input = Input(shape=(1,), name='gender_input')
     for layer in base_model_carpal.layers:

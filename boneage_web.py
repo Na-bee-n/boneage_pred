@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image,ImageOps
 import numpy as np
 import random
-import cv2
+
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model

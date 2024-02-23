@@ -24,7 +24,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 import combined_model
 
 cm = combined_model.build_regression_model()
-cm.load_weights(r"F:\python\web_streamlit\ALL_IN_ONE\model_weights\model_weights\combined_weights_7_epoch_third_acc.h5")
+cm.load_weights("https://drive.google.com/file/d/1MTD0i7aOb8s1tJlJMNhuUwW_Y8Q_BQvC/view?usp=sharing")
 ######################################################
 roi=img_extractor.RoiExtractor()
 

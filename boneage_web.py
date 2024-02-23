@@ -27,29 +27,7 @@ cm.load_weights("https://drive.google.com/file/d/1MTD0i7aOb8s1tJlJMNhuUwW_Y8Q_BQ
 ######################################################
 roi=img_extractor.RoiExtractor()
 
-# Connect to MySQL
-conn = mysql.connector.connect(
-    host="localhost",
-    user = "root",
-    password = "",
-    database = "FeedbackCollection"
-)
-try:
-    if conn.is_connected:
-        #create cursor
-        cursor = conn.cursor()
 
-        #Create feedback table if not exits
-        cursor.execute('''CREATE TABLE IF NOT EXISTS feedback(
-                       id INT AUTO_INCREMENT PRIMARY KEY,
-                       name VARCHAR(255),
-                       feedback_type VARCHAR(255),
-                       feedback_message TEXT
-        )''')
-
-        conn.commit()
-except mysql.connector.Error as e:
-    st.error(f"Error connecting to MySQL: {e}")
 
     
 # from sklearn.metrics import mean_absolute_error
@@ -204,13 +182,9 @@ if page == "Feedback Form":
 
     if st.button("Submit Feedback"):
         #Insert feedback into the database
-        cursor.execute('''INSERT INTO feedback (name,feedback_type,feedback_message) VALUES (%s,%s,%s)''',(name,feedback_type,feedback_message))
+        
 
-        conn.commit()
         st.success("Feedback Submitted")
 
-
-cursor.close()
-conn.close()
 
  

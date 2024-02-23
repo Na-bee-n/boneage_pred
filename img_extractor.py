@@ -27,7 +27,7 @@ class RoiExtractor:
     def __init__(self):
         # Model initialization
         self.model = build_image_model()
-        self.model.load_weights(r"F:\python\web_streamlit\ALL_IN_ONE\model_weights\model_weights\inception\best_final_5.h5")
+        self.model.load_weights("https://drive.google.com/file/d/1JqIQHYvW8q5DMjOpcVsfkwxaOZP2CmnL/view?usp=sharing")
         self.heatmap_model = Model(inputs=self.model.inputs, outputs=self.model.layers[-3].output)
 
         # Outputs
